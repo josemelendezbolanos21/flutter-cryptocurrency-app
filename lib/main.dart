@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import './home_page.dart';
 import 'dart:async';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
     theme: ThemeData(
-      primaryColor: Colors.pinkAccent,
+      primarySwatch: Colors.pink,
+      primaryColor: defaultTargetPlatform == TargetPlatform.iOS ? Colors.grey[100] : null,
     ),
     home: HomePage(_currencies),
     debugShowCheckedModeBanner: false,
